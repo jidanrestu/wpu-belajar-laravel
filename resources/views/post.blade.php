@@ -6,5 +6,5 @@
         <h5>By : {{ $post['author'] }}</h5>
         <p>{{ $post['content'] }}</p>
     </article>
-    <a class="btn btn-primary" href="/blog">Go back</a>
+    <a class="btn btn-primary" href="/posts">Go back</a>
 @endsection
