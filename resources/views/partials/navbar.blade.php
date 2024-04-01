@@ -16,6 +16,10 @@
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('posts') ? 'active' : '' }}" href="/posts">Posts</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ Request::is('categories') ? 'active' : '' }}"
+                        href="/categories">Categories</a>
+                </li>
             </ul>
         </div>
     </div>
