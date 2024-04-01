@@ -14,9 +14,9 @@ class PostController extends Controller
             'posts' => Post::all(),
         ]);
     }
-    public function show($slug)
+    public function show(Post $post)
     {
-        $selected_post = Post::find($slug);
+        $selected_post = Post::find($post->id);
         return view('post', [
             'title' => $selected_post['judul'],
             'post' => $selected_post,

@@ -2,9 +2,8 @@
 
 @section('content')
     <article>
-        <h2>{{ $post['judul'] }}</h2>
-        <h5>By : {{ $post['author'] }}</h5>
-        <p>{{ $post['content'] }}</p>
+        <h2>{{ $post['title'] }}</h2>
+        {!! $post['body'] !!}
     </article>
     <a class="btn btn-primary" href="/posts">Go back</a>
 @endsection
