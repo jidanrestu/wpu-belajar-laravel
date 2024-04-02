@@ -41,15 +41,15 @@ Route::get('/categories', function () {
         'categories' => Category::all()
     ]);
 });
-Route::get('/categories/{category:slug}', function (Category $category) {
-    return view('posts', [
-        'title' => "Posts From Category " . $category->name,
-        'posts' => $category->posts->load('category', 'author'),
-    ]);
-});
-Route::get('/authors/{author:username}', function (User $author) {
-    return view('posts', [
-        'title' => 'Post By ' . $author->name,
-        'posts' => $author->posts->load('category', 'author'),
-    ]);
-});
+// Route::get('/categories/{category:slug}', function (Category $category) {
+//     return view('posts', [
+//         'title' => "Posts From Category " . $category->name,
+//         'posts' => $category->posts->load('category', 'author'),
+//     ]);
+// });
+// Route::get('/authors/{author:username}', function (User $author) {
+//     return view('posts', [
+//         'title' => 'Post By ' . $author->name,
+//         'posts' => $author->posts->load('category', 'author'),
+//     ]);
+// });

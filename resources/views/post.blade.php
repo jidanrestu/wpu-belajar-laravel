@@ -9,10 +9,10 @@
                     <img src="https://random-image-pepebigotes.vercel.app/api/random-image" alt="gambar random"
                         class="img-fluid my-2">
                     <p>
-                        By. <a href="/authors/{{ $post->author->username }}"
+                        By. <a href="/posts?author={{ $post->author->username }}"
                             class="text-decoration-none">{{ $post->author->name }}</a>
                         | <a class="text-decoration-none"
-                            href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a>
+                            href="/posts?category={{ $post->category->slug }}">{{ $post->category->name }}</a>
                     </p>
                     {!! $post['body'] !!}
                     <a class="btn btn-primary" href="/posts">Go back to Posts</a>
