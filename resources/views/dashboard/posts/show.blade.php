@@ -8,13 +8,19 @@
                     <h2>{{ $post->title }}</h2>
                     <div class="mt-3">
                         <a class="btn btn-success" href="/dashboard/posts"><span data-feather="arrow-left"></span> Back</a>
-                        <a class="btn btn-warning" href=""><span data-feather="edit"></span> Edit</a>
-                        <a class="btn btn-danger" href=""><span data-feather="trash-2"></span> Delete</a>
+                        <a class="btn btn-warning" href="/dashboard/posts/{{ $post->slug }}/edit"><span
+                                data-feather="edit"></span> Edit</a>
+                        <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="d-inline">
+                            @method('delete')
+                            @csrf
+                            <button class="btn btn-danger" onclick="return confirm('Are you sure?')">
+                                <span data-feather="trash-2"></span> Delete
+                            </button>
+                        </form>
                     </div>
                     <img src="https://random-image-pepebigotes.vercel.app/api/random-image" alt="gambar random"
                         class="img-fluid my-3">
                     {!! $post->body !!}
-                    <a class="btn btn-primary my-2" href="/dashboard/posts">Go back to Posts</a>
                 </article>
             </div>
         </div>
