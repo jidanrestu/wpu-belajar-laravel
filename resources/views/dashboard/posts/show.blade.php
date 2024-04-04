@@ -14,7 +14,7 @@
                     <img src="https://random-image-pepebigotes.vercel.app/api/random-image" alt="gambar random"
                         class="img-fluid my-3">
                     {!! $post->body !!}
-                    <a class="btn btn-primary" href="/posts">Go back to Posts</a>
+                    <a class="btn btn-primary my-2" href="/dashboard/posts">Go back to Posts</a>
                 </article>
             </div>
         </div>
