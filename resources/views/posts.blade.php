@@ -19,7 +19,15 @@
 
     @if ($posts->count())
         <div class="card mb-3">
-            <img src="https://picsum.photos/id/1/1920/540" class="card-img-top" alt="Gambar laptop">
+            @if ($posts[0]->image)
+                <div style="max-height: 350px; overflow:hidden;">
+                    <img src="{{ asset('storage/' . $posts[0]->image) }}" alt="{{ $posts[0]->category->name }}"
+                        class="card-img-top">
+                </div>
+            @else
+                <img src="https://random-image-pepebigotes.vercel.app/api/random-image" class="card-img-top"
+                    alt="gambar random">
+            @endif
             <div class="card-body">
                 <h5 class="card-title">{{ $posts[0]->title }}</h5>
                 <p class="card-text">
@@ -48,8 +56,14 @@
                                 <a class="text-decoration-none text-light"
                                     href="/posts?category={{ $post->category->slug }}">{{ $post->category->name }}</a>
                             </div>
-                            <img src="https://random-image-pepebigotes.vercel.app/api/random-image" class="card-img-top"
-                                alt="gambar random">
+                            @if ($post->image)
+                                <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->category->name }}"
+                                    class="card-img-top">
+                            @else
+                                <img src="https://random-image-pepebigotes.vercel.app/api/random-image" class="card-img-top"
+                                    alt="gambar random">
+                            @endif
+
                             <div class="card-body">
                                 <h5 class="card-title">{{ $post->title }}</h5>
                                 <p class="card-text">

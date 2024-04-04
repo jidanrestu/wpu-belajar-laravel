@@ -18,8 +18,13 @@
                             </button>
                         </form>
                     </div>
-                    <img src="https://random-image-pepebigotes.vercel.app/api/random-image" alt="gambar random"
-                        class="img-fluid my-3">
+                    @if ($post->image)
+                        <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->category->name }}"
+                            class="img-fluid my-3">
+                    @else
+                        <img src="https://random-image-pepebigotes.vercel.app/api/random-image" alt="gambar random"
+                            class="img-fluid my-3">
+                    @endif
                     {!! $post->body !!}
                 </article>
             </div>
